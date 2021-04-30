@@ -1,0 +1,12 @@
+kind: Workflow
+name: deploy
+description: Authenticate against Helm registry and deploy project
+envVars:
+  HELM_EXPERIMENTAL_OCI: 1
+steps:
+  - script: helm chart pull gardenhelmprivatetest.azurecr.io/helm/hello-world:v1
+    name: pull
+  - script: helm chart export gardenhelmprivatetest.azurecr.io/helm/hello-world:v1 --destination ./hello-world/chart-exports
+    name: export
+  - name: deploy
+    command: [deploy]

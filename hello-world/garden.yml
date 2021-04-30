@@ -1,0 +1,4 @@
+kind: Module
+type: helm
+name: hello-world
+chartPath: chart-exports/hello-world
