@@ -1,6 +1,6 @@
 kind: Workflow
 name: deploy
-description: Authenticate against Helm registry and deploy project
+description: Use ACR helm registry to deploy helm chart
 envVars:
   HELM_EXPERIMENTAL_OCI: 1
 steps:
